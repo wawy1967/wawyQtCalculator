@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->statusBar->showMessage("Ready!");
     qDebug() << "Hello";
+    connect(ui->dial,SIGNAL(valueChanged(int)), ui->lcdNumber,SLOT(display(int)));
 }
 
 MainWindow::~MainWindow()
@@ -61,4 +62,9 @@ void MainWindow::on_pushButtonDiv_clicked()
 void MainWindow::on_actionExit_triggered()
 {
     qApp->exit();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+       ;
 }
